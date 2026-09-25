@@ -1,0 +1,7 @@
+has_disability,labor_status,surveyed,est_population
+Without disability,Employed,44103,4696437
+Without disability,Not in labor force,11685,1051270
+Without disability,Unemployed,1573,178273
+With disability,Employed,3453,351650
+With disability,Not in labor force,4785,410453
+With disability,Unemployed,316,32326

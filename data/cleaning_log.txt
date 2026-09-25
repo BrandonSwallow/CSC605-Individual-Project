@@ -1,0 +1,39 @@
+Loaded 114,270 rows x 22 columns from C:\Users\Brandon\Downloads\csv_pnc\psam_p37.csv
+Duplicate person records: 0
+Filtered to ages 18-64: 114,270 -> 65,915 rows (study population is working-age adults, not a data-quality drop)
+
+Missing values (before cleaning):
+  WKHP: 14,216 (21.6%)
+
+WKHP blanks = did not work in past 12 months -> set to 0, added flag 'worked_past_year'
+Created 'wages_adj' = WAGP x ADJINC / 1,000,000 (inflation-adjusted wages)
+Decoded categorical codes and created features: employed, labor_status, has_disability, dis_* flags, num_disabilities, race_eth, education, marital, veteran, age_group
+wages_adj: IQR upper fence = 166,501.0; 2,939 records flagged in 'outlier_wages_adj' (kept, not dropped)
+WKHP: IQR upper fence = 44.5; 11,314 records flagged in 'outlier_wkhp' (kept, not dropped)
+Note: Census top-codes very high wages, so extreme values are capped in the source data.
+
+Missing values (after cleaning):
+  none
+
+Final dataset: 65,915 rows x 42 columns
+
+Number of people (ages 18-64):
+  Surveyed: 65,915   Estimated population: 6,720,409
+
+    has_disability       labor_status  surveyed  est_population
+Without disability           Employed     44103         4696437
+Without disability Not in labor force     11685         1051270
+Without disability         Unemployed      1573          178273
+   With disability           Employed      3453          351650
+   With disability Not in labor force      4785          410453
+   With disability         Unemployed       316           32326
+
+People with each disability type (a person can have more than one):
+  hearing              surveyed:   1,564   est. population:    152,244
+  vision               surveyed:   1,585   est. population:    160,604
+  cognitive            surveyed:   4,206   est. population:    380,900
+  ambulatory           surveyed:   3,458   est. population:    318,670
+  self_care            surveyed:   1,491   est. population:    118,214
+  independent_living   surveyed:   3,146   est. population:    269,731
+Weighted employment rate, with disability: 44.3%
+Weighted employment rate, without disability: 79.3%
