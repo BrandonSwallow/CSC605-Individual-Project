@@ -1,0 +1,13 @@
+# API keys
+.streamlit/secrets.toml
+.env
+# Extracted raw file (the zip is kept; clean_data.py extracts it)
+data/raw/*.sas7bdat
+data/raw/*.csv
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
